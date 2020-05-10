@@ -39,6 +39,8 @@ export default class ItemDetails extends Component {
   updateItem() {
     const { itemId, getData, getImageUrl } = this.props;
     if (!itemId) {
+      this.setState({item:null});
+      console.log(this.state);
       return;
     }
 
@@ -59,7 +61,7 @@ export default class ItemDetails extends Component {
     }
 
     const { name } = item;
-
+    const {itemId, setItemDelete} = this.props;
     return (
       <div className="item-details card">
         <img className="item-image"
@@ -75,7 +77,7 @@ export default class ItemDetails extends Component {
               })
             }
           </ul>
-          <ErrorButton />
+          <ErrorButton setItemDelete={setItemDelete} itemId={itemId} />
         </div>
       </div>
     );

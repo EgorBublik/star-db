@@ -42,7 +42,6 @@ const withData = (View) => {
         });
     }
 
-
     render() {
       const { data, loading, error } = this.state;
 

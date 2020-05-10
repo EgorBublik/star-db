@@ -13,11 +13,13 @@ export default class ErrorButton extends Component {
       this.foo.bar = 0;
     }
 
+    const {itemId, setItemDelete} = this.props;
+
     return (
       <button
         className="error-button btn btn-danger btn-lg"
-        onClick={() => this.setState({renderError: true})}>
-        Throw Error
+        onClick={() => setItemDelete(itemId)}>
+        Delete
       </button>
     );
   }
